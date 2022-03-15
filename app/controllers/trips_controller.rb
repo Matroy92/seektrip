@@ -5,10 +5,12 @@ class TripsController < ApplicationController
   end
 
   def show
+    @trip = Trip.find(params[:id])
   end
 
   def new
-    @trip = Trip.new(trip_params)
+  #if @trip.photo.attached? do
+    @trip = Trip.new
   end
 
   def create
@@ -36,7 +38,8 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.permit(:name, :address, :starting_date, :ending_date, :photo)
+
+    params.require(:trip).permit(:name, :address, :starting_date, :ending_date, :photo)
   end
 
   def set_trip

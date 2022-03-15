@@ -2,7 +2,7 @@
 <p><%= @trip.address %></p>
 <p><%= @trip.starting_date %></p>
 <p><%= @trip.ending_date %></p>
-<p><%= cl_image_tag @trip.photo.key, height: 300, width: 400, crop: :fill %><p>
+<%= cl_image_tag @trip.photo.key if @trip.photo.attached? %>
 <%= link_to "Edit trip", edit_trip_path(@trip) %></li>
 <%= link_to "Go back to the trips list", trips_path %></li>
 <%= link_to 'Leave a review', new_trip_review_path(@trip) %>
