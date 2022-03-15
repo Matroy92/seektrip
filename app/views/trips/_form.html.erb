@@ -1,0 +1,12 @@
+<%= simple_form_for(trip) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :starting_date %>
+  <%= f.number_field :starting_date %>
+  <%= f.label :ending_date %>
+  <%= f.number_field :ending_date %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
