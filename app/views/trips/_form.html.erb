@@ -3,10 +3,8 @@
   <%= f.text_field :name %>
   <%= f.label :address %>
   <%= f.text_field :address %>
-  <%= f.label :starting_date %>
-  <%= f.number_field :starting_date %>
-  <%= f.label :ending_date %>
-  <%= f.number_field :ending_date %>
+  <%= f.input :starting_date, as: :date, html5: true %>
+  <%= f.input :ending_date, as: :date, html5: true %>
   <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
